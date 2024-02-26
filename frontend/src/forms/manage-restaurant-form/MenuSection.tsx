@@ -18,28 +18,28 @@ const MenuSection = () => {
         <FormDescription>
           Add the menu items that your restaurant serves
         </FormDescription>
-        <FormField
-          control={control}
-          name="menuItems"
-          render={() => (
-            <FormItem className="flex flex-col gap-2">
-              {fields.map((_, index) => (
-                <MenuItemInput
-                  index={index}
-                  removeMenuItem={() => remove(index)}
-                />
-              ))}
-            </FormItem>
-          )}
-        />
-        <Button
-          className="mt-2"
-          type="button"
-          onClick={() => append({ name: "", price: "" })}
-        >
-          Add Menu Item
-        </Button>
       </div>
+      <FormField
+        control={control}
+        name="menuItems"
+        render={() => (
+          <FormItem className="flex flex-col gap-2">
+            {fields.map((_, index) => (
+              <MenuItemInput
+                index={index}
+                removeMenuItem={() => remove(index)}
+              />
+            ))}
+          </FormItem>
+        )}
+      />
+      <Button
+        className="mt-2"
+        type="button"
+        onClick={() => append({ name: "", price: "" })}
+      >
+        Add Menu Item
+      </Button>
     </div>
   );
 };
